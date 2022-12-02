@@ -1,0 +1,50 @@
+var
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Orphan Train Passengers</title>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>People who were on Orphan Trains</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for record in Orphan_Train_Data %}
+          <tr>
+            <td>
+              <a href="people/{{record.AutoID}}">{{record["Birth Name First"]}} {{record["Birth Name Last"]}}</a>
+            </td>
+            <td>
+              {{record.Gender}}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

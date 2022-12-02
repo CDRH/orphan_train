@@ -6,4 +6,9 @@ module.exports = eleventyConfig => {
         console.log(`${records.data.length} records found.`);
         return records.data;
       });
+
+      eleventyConfig.addPassthroughCopy('css')
+  return {
+    passthroughFileCopy: true
+  }
     };
