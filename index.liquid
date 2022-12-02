@@ -1,1 +1,18 @@
-this is a test
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Orphan Train Passengers</title>
+
+  </head>
+  <body>
+    <h1>People who were on Orphan Trains</h1>
+    <ul>
+      {% for record in Orphan_Train_Data %}
+        <li>
+          <a href="people/{{record.AutoID}}">{{record["Birth Name First"]}} {{record["Birth Name Last"]}}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

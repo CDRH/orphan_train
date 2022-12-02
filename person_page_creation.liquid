@@ -14,12 +14,7 @@ permalink: "people/{{ record.AutoID | slug }}/"
 
   </head>
   <body>
-    {% comment %}
-      {% raw %}
-      <h1>{{record["Birth Name First"]}} {{record["Birth Name Last"]}}</h1>
-      {% endraw %}
-    {% endcomment %}
-
+    <h1>{{record["Birth Name First"]}} {{record["Birth Name Last"]}}</h1>
     <p>
       <br/>
       {{record.Gender}}
