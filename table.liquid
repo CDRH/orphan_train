@@ -1,47 +1,97 @@
-var
-
 <!DOCTYPE html>
 <html lang="en">
+  {% comment %}
+    This is used to set up DataTables
+  {% endcomment %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+  <script>
+    $(document).ready(function() {
+      $('#table').DataTable();
+    });
+  </script>
+  {% comment %}
+    end of DataTables setup
+  {% endcomment %}
   <head>
     <meta charset="utf-8">
     <title>Orphan Train Passengers</title>
-    <style>
-      table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-      }
-
-      td,
-      th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-      }
-
-      tr:nth-child(even) {
-        background-color: #dddddd;
-      }
-    </style>
   </head>
   <body>
-    <h1>People who were on Orphan Trains</h1>
-    <table>
+    <h1>Passengers on the Orphan Train</h1>
+    {% comment %}
+      add the id so DataTables knows what's going on. 
+      Class is how you select your styles
+    {% endcomment %}
+    <table id="table" class="display compact">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Gender</th>
+          <th>Link to page</th>
+          <th>Birth Name Last</th>
+          <th>Birth Name First</th>
+          <th>Birth Name Middle</th>
+          <th>Birth Name Alt</th>
+          <th>Age on Arrival</th>
+          <th>Sending Organization</th>
+          <th>Adopted Name Last</th>
+          <th>Adopted Name First</th>
+          <th>Adopted Name Middle</th>
+          <th>Adopted Name Alt</th>
+          <th>Married Name Last</th>
+          <th>Married Name First</th>
+          <th>Married Name Middle</th>
+          <th>Married Name Alt</th>
+          <th>Spouse Name Last</th>
+          <th>Spouse Name First</th>
+          <th>Spouse Name Middle</th>
+          <th>Spouse Name Alt</th>
+          <th>Arrival Date</th>
+          <th>Arrival Place</th>
+          <th>Family Taking Child Last</th>
+          <th>Family Taking Child First</th>
+          <th>Family Taking Child Middle</th>
+          <th>Family Taking Child Alt</th>
+          <th>Location of Family</th>
+          <th>Date of Birth</th>
+          <th>Place of Birth</th>
+          <th>Source</th>
         </tr>
       </thead>
       <tbody>
         {% for record in Orphan_Train_Data %}
           <tr>
             <td>
-              <a href="people/{{record.AutoID}}">{{record["Birth Name First"]}} {{record["Birth Name Last"]}}</a>
+              <a href="../people/{{record.AutoID}}/index.html">{{record["Birth Name First"]}} {{record["Birth Name Last"]}}</a>
             </td>
-            <td>
-              {{record.Gender}}
-            </td>
+            <td>{{record["Birth Name Last"]}}</td>
+            <td>{{record["Birth Name First"]}}</td>
+            <td>{{record["Birth Name Middle"]}}</td>
+            <td>{{record["Birth Name Alt"]}}</td>
+            <td>{{record["Age on Arrival in Years"]}}</td>
+            <td>{{record["Sending Organization"]}}</td>
+            <td>{{record["Adopted Name Last "]}}</td>
+            <td>{{record["Adopted Name First"]}}</td>
+            <td>{{record["Adopted Name Middle"]}}</td>
+            <td>{{record["Adopted Name Alt"]}}</td>
+            <td>{{record["Married Name Last"]}}</td>
+            <td>{{record["Married Name First"]}}</td>
+            <td>{{record["Married Name Middle"]}}</td>
+            <td>{{record["Married Name Alt"]}}</td>
+            <td>{{record["Spouse Name Last"]}}</td>
+            <td>{{record["Spouse Name First"]}}</td>
+            <td>{{record["Spouse Name Middle"]}}</td>
+            <td>{{record["Spouse Name Alt"]}}</td>
+            <td>{{record["Arrival Date"]}}</td>
+            <td>{{record["Arrival Place"]}}</td>
+            <td>{{record["Family Taking Child Last"]}}</td>
+            <td>{{record["Family Taking Child First"]}}</td>
+            <td>{{record["Family Taking Child Middle"]}}</td>
+            <td>{{record["Family Taking Child Alt"]}}</td>
+            <td>{{record["Location of Family"]}}</td>
+            <td>{{record["Date of Birth"]}}</td>
+            <td>{{record["Place of Birth"]}}</td>
+            <td>{{record["Sources Used"]}}</td>
           </tr>
         {% endfor %}
       </tbody>
