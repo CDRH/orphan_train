@@ -8,6 +8,7 @@ module.exports = eleventyConfig => {
       });
 
       eleventyConfig.addPassthroughCopy('css')
+//used so we can have css files that are copied to the ending website
   return {
     passthroughFileCopy: true
   }
