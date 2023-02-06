@@ -1,7 +1,10 @@
 p {
   max-width: 60ch;
   margin: auto;
-  text-indent: 10ch;
+  text-indent: 5ch;
+}
+p:last-child {
+  margin-bottom: 5ch;
 }
 
 h2 {

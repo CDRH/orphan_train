@@ -11,9 +11,10 @@ permalink: "people/{{ record.AutoID | slug }}/"
   <head>
     <meta charset="utf-8">
     <title>{{record.AutoID}}</title>
-
   </head>
   <body>
+    {% render 'header' %}
+    
     <h1>{{record["Birth Name First"]}} {{record["Birth Name Last"]}}</h1>
     <p>
       <br/>
