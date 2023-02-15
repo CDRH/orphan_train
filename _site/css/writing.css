@@ -1,11 +1,56 @@
+body {
+  text-align: center;
+  background-color: #ffd490;
+}
+
+.paper {
+background-color: #FFDEBC;
+padding: 15px 30px;
+position: relative;
+width: 75%;
+display: inline-block;
+}
+
+.paper,
+.paper::before,
+.paper::after {
+  /* Styles to distinguish sheets from one another */
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+  border: 1px solid #bbb;
+}
+
+.paper::before,
+.paper::after {
+  content: "";
+  position: absolute;
+  height: 96%;
+  width: 99%;
+  background-color: #FFDEBC;
+}
+
+.paper::before {
+  right: 15px;
+  top: 0;
+  transform: rotate(-2deg);
+  z-index: -1;
+}
+
+.paper::after {
+  top: 5px;
+  right: -5px;
+  transform: rotate(2deg);
+  z-index: -2;
+}
+
+
 p {
-  max-width: 60ch;
+  max-width: 70ch;
   margin: auto;
   text-indent: 5ch;
+  font-size: 20px;
+  text-align: left;
 }
-p:last-child {
-  margin-bottom: 5ch;
-}
+
 
 h2 {
   text-align: center;
@@ -14,3 +59,4 @@ h2 {
 h1 {
   text-align: center;
 }
+
