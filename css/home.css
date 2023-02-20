@@ -1,39 +1,33 @@
-/*
-Used for Home Page
-*/
-
-
-
 h1 {
-    color: #444;
-    background-color: #ffd490;
-}
-
-body {
-    background-color: #ffd490;
-    position:relative;
-}
-
-img {
-    display: block;
-    margin: 40px auto 0px;
-}
-
-.clickHere {
-    border-radius: 10px;
-    padding: 10px;
-    font-weight: bold;
-    width: 25%;
-    margin: 20px auto;
-    text-align: center;
-    color: #fff;
-    background-color: #677068;
-    font-size: 36px;
-    text-decoration: none;
-    border: 1px solid black;
-    display: block;
-}
-
-.clickHere:hover {
-    background-color: #9AA29B;
-}
+    background-color:#ffd490;
+    color:#444
+    }
+    
+    body {
+    background-color:#ffd490;
+    position:relative
+    }
+    
+    img {
+    display:block;
+    margin:40px auto 0
+    }
+    
+    .clickHere {
+    background-color:#677068;
+    border:1px solid #000;
+    border-radius:.5rem;
+    color:#fff;
+    display:block;
+    font-size:2rem;
+    font-weight:700;
+    margin:2rem auto;
+    padding:.5rem;
+    text-align:center;
+    text-decoration:none;
+    width:25%
+    }
+    
+    .clickHere:hover {
+    background-color:#9AA29B
+    }
