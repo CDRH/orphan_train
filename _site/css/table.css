@@ -1,8 +1,12 @@
 body {
   background-color: #ffd490;
-  margin:0;
+  margin: 0;
 }
 
 #table_wrapper {
   background-color: #fff;
+}
+
+.dataTables_wrapper .dataTables_filter {
+  font-weight: bold;
 }
