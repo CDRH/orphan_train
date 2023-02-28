@@ -28,7 +28,7 @@ permalink: "people/{{ record.AutoID | slug }}/"
             {{ record["Birth Name Alt"] }}</li>
         {% endunless %}
         <li>
-          <b>Adopted Name:</b>
+          <b>Foster Name:</b>
           {{ record["Adopted Name First"] }}
           {% unless record["Adopted Name Alt"] == empty %}
             ({{ record["Adopted Name Alt"] }})
@@ -36,7 +36,7 @@ permalink: "people/{{ record.AutoID | slug }}/"
           {{ record["Adopted Name Middle"] }} {{ record["Adopted Name Last"] }}
         </li>
         <li>
-          <b>Adopted Family:</b>
+          <b>Foster Family:</b>
           {{ record["Family Taking Child First"] }} {{ record["Family Taking Child Middle"] }} {{ record["Family Taking Child Last"] }}</li>
         <li>
           <b>Location of Family:</b>
@@ -83,6 +83,10 @@ permalink: "people/{{ record.AutoID | slug }}/"
             <b>Spouse Name:</b>
             {{ record["Spouse Name First"] }} {{ record["Spouse Name Middle"] }} {{ record["Spouse Name Last"] }}</li>
         {% endunless %}
+        <li>
+          <b>Source: </b>
+          {{record["Sources Used"]}}
+        </li>
       </ol>
     </div>
     <a href="/table/" class="clickHere">
