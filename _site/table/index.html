@@ -9,7 +9,28 @@
   <link rel="stylesheet" href="../css/table.css">
   <script>
     $(document).ready(function() {
-      $('#table').DataTable();
+      $('#table').DataTable({
+        stateSave: true,
+        scrollY: '70vh',
+        scrollCollapse: true,
+        scrollX: true,
+        "lengthMenu": [
+          [
+            15,
+            25,
+            50,
+            100,
+            -1
+          ],
+          [
+            15,
+            25,
+            50,
+            100,
+            'All'
+          ]
+        ]
+      });
     });
   </script>
   <head>
@@ -33,7 +54,10 @@
       <div class="background">
       <h1>Passengers on the Orphan Train</h1>
       
-      <table id="table" class="display compact">
+      <table
+        id="table"
+        class="display compact"
+        style="width:100%">
         <thead>
           <tr>
             <th>Birth Name</th>

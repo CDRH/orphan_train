@@ -11,7 +11,28 @@
   <link rel="stylesheet" href="../css/table.css">
   <script>
     $(document).ready(function() {
-      $('#table').DataTable();
+      $('#table').DataTable({
+        stateSave: true,
+        scrollY: '70vh',
+        scrollCollapse: true,
+        scrollX: true,
+        "lengthMenu": [
+          [
+            15,
+            25,
+            50,
+            100,
+            -1
+          ],
+          [
+            15,
+            25,
+            50,
+            100,
+            'All'
+          ]
+        ]
+      });
     });
   </script>
   {% comment %}
@@ -29,7 +50,10 @@
       add the id so DataTables knows what's going on. 
       Class is how you select your styles
       {% endcomment %}
-      <table id="table" class="display compact">
+      <table
+        id="table"
+        class="display compact"
+        style="width:100%">
         <thead>
           <tr>
             <th>Birth Name</th>
