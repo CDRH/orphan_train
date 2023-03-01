@@ -9,6 +9,7 @@ body {
   padding: 1rem 2rem;
   position: relative;
   width: 75%;
+  max-width: 60rem;
   margin: 0 auto 10rem;
   display: inline-block;
 }
@@ -44,8 +45,8 @@ body {
 }
 
 p {
-  font-size: 1.25rem;
-  margin: auto;
+  font-size: 1.5rem;
+  margin: 1rem auto;
   max-width: 70ch;
   text-align: left;
   text-indent: 2.5rem;
@@ -76,38 +77,27 @@ h1 {
 }
 
 .nextPage {
-  height: 3rem;
-  font-size: 2rem;
-  position: absolute;
   right: 1rem;
   bottom: 1rem;
 }
 
 .prevPage {
-  height: 3rem;
-  font-size: 2rem;
-  position: absolute;
   left: 1rem;
   bottom: 1rem;
 }
 
 button {
+  position: absolute;
   background-color: #fbeee0;
   border: 2px solid #422800;
   border-radius: 30px;
   box-shadow: #422800 4px 4px 0 0;
   color: #422800;
   cursor: pointer;
-  display: inline-block;
   font-weight: 600;
-  font-size: 18px;
-  padding: 0 18px;
+  height: 3rem;
+  font-size: 2rem;
   line-height: 50px;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
 }
 
 button:hover {
