@@ -11,15 +11,33 @@
     This contains all photos and links to the pages
     {% endcomment %}
     {% render 'header' %}
-    <img src="/images/17954-resized.webp" alt="Photo of Panzer Brothers"/>
-    <img src="/images/17955-resized.webp" alt="Photo of Panzer Brothers"/>
-    <img src="/images/17956-resized.webp" alt="Photo of Panzer Brothers"/>
-    <img src="/images/17957-resized.webp" alt="Photo of Panzer Brothers"/>
-    <img src="/images/17958-resized.webp" alt="Photo of Panzer Brothers"/>
-    <img src="/images/24422-resized.webp" alt="Photo of Panzer Brothers"/>
+    <div class="slideshow-wrapper">
+      <div class="slide">
+        <div class="counter">1/6</div>
+        <img src="/images/17954-resized.webp" alt="Photo of Panzer Brothers" />
+        <p class="caption">Photo of the Panzer Brothers, 1930.</p>
+        <div class="links">
+          Look here for more information: <br/>
+          <a href="../people/otr.ne01405/">Robert A. Panzer</a>
+          <a href="../people/otr.ne01404/">John C. Panzer</a>
+          <a href="../people/otr.ne01402">George Oliver Panzer</a>
+          <a href="../people/otr.ne01401">Edward Joseph Clarence Panzer</a>
+          <a href="../people/otr.ne01403">Harold J. Panzer</a>
+        </div>
+
+      </div>
+      <button class="prevButton">&#10094;</button>
+      <button class="nextButton">&#10095;</button>
+
+      {% comment %}  
+      <img src="/images/17955-resized.webp" alt="Photo of Panzer Brothers"/>
+      <img src="/images/17956-resized.webp" alt="Photo of Panzer Brothers"/>
+      <img src="/images/17957-resized.webp" alt="Photo of Panzer Brothers"/>
+      <img src="/images/17958-resized.webp" alt="Photo of Panzer Brothers"/>
+      <img src="/images/24422-resized.webp" alt="Photo of Panzer Brothers"/>
+      {% endcomment %}
+    </div>
     <a href="/table/" class="clickHere">
-      Click here to see the list of passengers</a>
+      Click here to see the list of all passengers!</a>
   </body>
 </html>
-
-

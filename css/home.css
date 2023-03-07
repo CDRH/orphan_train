@@ -9,7 +9,7 @@ body {
   margin:0;
 }
 
-img {
+img.train {
   display: block;
   margin: 0 auto;
   width: 778px;
