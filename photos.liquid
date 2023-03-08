@@ -11,7 +11,7 @@
     This contains all photos and links to the pages
     {% endcomment %}
     {% render 'header' %}
-    <div class="slideshow-wrapper">
+      <div class="slideshow-wrapper">
       <div class="slide">
         <div class="counter">1/6</div>
         <img src="/images/17954-resized.webp" alt="Photo of Panzer Brothers" />
@@ -26,18 +26,29 @@
         </div>
 
       </div>
-      <button class="prevButton">&#10094;</button>
-      <button class="nextButton">&#10095;</button>
+
+      <div class="slide">
+        <div class="counter">2/6</div>
+        <img src="/images/17955-resized.webp" alt="Photo of Robert Panzer" />
+        <p class="caption">Robert Panzer, New York, 1921.</p>
+        <div class="links">
+          Look here for more information: <br/>
+          <a href="../people/otr.ne01405/">Robert A. Panzer</a>
+        </div>
+
+      </div>
+
 
       {% comment %}  
-      <img src="/images/17955-resized.webp" alt="Photo of Panzer Brothers"/>
-      <img src="/images/17956-resized.webp" alt="Photo of Panzer Brothers"/>
-      <img src="/images/17957-resized.webp" alt="Photo of Panzer Brothers"/>
-      <img src="/images/17958-resized.webp" alt="Photo of Panzer Brothers"/>
-      <img src="/images/24422-resized.webp" alt="Photo of Panzer Brothers"/>
+      <img src="/images/17955-resized.webp" alt="Photo of Robert Panzer"/>
+      <img src="/images/17956-resized.webp" alt="Photo of Harold Panzer"/>
+      <img src="/images/17957-resized.webp" alt="Photo of John Panzer"/>
+      <img src="/images/17958-resized.webp" alt="Photo of George Panzer"/>
+      <img src="/images/24422-resized.webp" alt="Photo of Toni Weiler"/>
       {% endcomment %}
+      <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+      <button class="next" onclick="plusSlides(1)">&#10095;</button>
     </div>
-    <a href="/table/" class="clickHere">
-      Click here to see the list of all passengers!</a>
+    {% render 'footer' %}
   </body>
 </html>

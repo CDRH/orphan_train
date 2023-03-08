@@ -14,6 +14,27 @@ body {
   display: inline-block;
 }
 
+p.essayParagraph {
+  font-size: 1.5rem;
+  margin: 1rem auto;
+  max-width: 70ch;
+  text-align: left;
+  text-indent: 2.5rem;
+}
+
+p.essayParagraph:first-child {
+  padding-top: 2.5rem;
+}
+
+p.essayParagraph:nth-last-child(2) {
+  margin-bottom: 4rem;
+}
+
+p.essayParagraph:last-child {
+  margin-bottom: 4rem;
+}
+
+/* stacked paper styling */
 .paper,
 .paper::before,
 .paper::after {
@@ -44,32 +65,12 @@ body {
   z-index: -2;
 }
 
-p {
-  font-size: 1.5rem;
-  margin: 1rem auto;
-  max-width: 70ch;
-  text-align: left;
-  text-indent: 2.5rem;
-}
-
-p:first-child {
-  padding-top: 2.5rem;
-}
-p:nth-last-child(2) {
-  margin-bottom: 4rem;
-}
-
-p:last-child {
-  margin-bottom: 4rem;
-}
-
+h1,
 h2 {
   text-align: center;
 }
 
-h1 {
-  text-align: center;
-}
+/* button styling */
 
 .page-2,
 .prevPage {

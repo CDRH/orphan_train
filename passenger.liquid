@@ -84,13 +84,14 @@ permalink: "people/{{ record.AutoID | slug }}/"
             {{ record["Spouse Name First"] }} {{ record["Spouse Name Middle"] }} {{ record["Spouse Name Last"] }}</li>
         {% endunless %}
         <li>
-          <b>Source: </b>
-          {{record["Sources Used"]}}
+          <b>Source:
+          </b>
+          {{ record["Sources Used"] }}
         </li>
       </ol>
     </div>
     <a href="/table/" class="clickHere">
-    Return to Passengers</a>
-    
+      Return to Passengers</a>
+    {% render 'footer' %}
   </body>
 </html>
