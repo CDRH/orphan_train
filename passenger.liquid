@@ -1,0 +1,97 @@
+---
+pagination:
+    data: Orphan_Train_Data
+    size: 1
+    alias: record
+permalink: "people/{{ record.AutoID | slug }}/"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="/css/passenger.css">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ record.AutoID }}</title>
+  </head>
+  <body>
+    {% render 'header' %}
+    <div class="paper">
+      <h1>{{ record["Birth Name First"] }}
+        {% unless record["Birth Name Middle"] == empty %}
+          {{ record["Birth Name Middle"] }}
+        {% endunless %}
+        {{ record["Birth Name Last"] }}</h1>
+      <ol>
+        {% unless record["Birth Name Alt"] == empty %}
+          <li>
+            <b>Alternate Birth Name:</b>
+            {{ record["Birth Name Alt"] }}</li>
+        {% endunless %}
+        <li>
+          <b>Foster Name:</b>
+          {{ record["Adopted Name First"] }}
+          {% unless record["Adopted Name Alt"] == empty %}
+            ({{ record["Adopted Name Alt"] }})
+          {% endunless %}
+          {{ record["Adopted Name Middle"] }} {{ record["Adopted Name Last"] }}
+        </li>
+        <li>
+          <b>Foster Family:</b>
+          {{ record["Family Taking Child First"] }} {{ record["Family Taking Child Middle"] }} {{ record["Family Taking Child Last"] }}</li>
+        <li>
+          <b>Location of Family:</b>
+          {{ record["Location of Family"] }}
+        </li>
+
+
+        <li>
+          <b>Sending Organization:</b>
+          {{ record["Sending Organization"] }}</li>
+        <li>
+          <b>Arrival Place:</b>
+          {{ record["Arrival Place"] }}
+        </li>
+        <li>
+          <b>Age on Arrival:</b>
+          {{ record["Age on Arrival in Years"] }}</li>
+        <li>
+          <b>Date of Birth:</b>
+          {{ record["Date of Birth"] }}{% unless record["Place of Birth"] == empty %}, {{ record["Place of Birth"] }}
+          {% endunless %}
+        </li>
+        {% unless record["Date of Death"] == empty %}
+          <li>
+            <b>Date of Death:</b>
+            {{ record["Date of Death"] }}{% unless record["Place of Death"] == empty %}, {{ record["Place of Death"] }}
+            {% endunless %}
+          </li>
+        {% endunless %}
+        <li>
+          <b>Gender:</b>
+          {{ record["Gender"] }}</li>
+        {% unless record["Married Name Last"] == empty %}
+          <li>
+            <b>Married Name:</b>
+            {{ record["Married Name First"] }}
+            {% unless record["Married Name Alt"] == empty %}
+              ({{ record["Married Name Alt"] }})
+            {% endunless %}
+            {{ record["Married Name Middle"] }} {{ record["Married Name Last"] }}</li>
+        {% endunless %}
+        {% unless record["Spouse Name Last"] == empty %}
+          <li>
+            <b>Spouse Name:</b>
+            {{ record["Spouse Name First"] }} {{ record["Spouse Name Middle"] }} {{ record["Spouse Name Last"] }}</li>
+        {% endunless %}
+        <li>
+          <b>Source:
+          </b>
+          {{ record["Sources Used"] }}
+        </li>
+      </ol>
+    </div>
+    <a href="/table/" class="clickHere">
+      Return to Passengers</a>
+    {% render 'footer' %}
+  </body>
+</html>

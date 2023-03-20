@@ -1,0 +1,28 @@
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid black;
+}
+
+.logo {
+  max-width: 100%;
+  width: 300px;
+}
+.footerInfo {
+  margin-top: 1.5rem;
+  display: block;
+}
+
+.footerInfo > a,
+.footerInfo > a:visited {
+  color: #090c9b;
+}
+
+.footerInfo > a:hover {
+  color: #3d52d5;
+}

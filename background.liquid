@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <link rel="stylesheet" href="../css/writing.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".changePage").click(function() {
+          $(".nextPage").toggle();
+          $(".prevPage").toggle();
+          $(".page-1").toggle();
+          $(".page-2").toggle();
+        });
+      });
+    </script>
+    <meta charset="utf-8">
+    <title>Orphan Train Passengers</title>
+
+  </head>
+
+  <body>
+    {% comment %}
+    This provides the background information about the trains
+    {% endcomment %}
+    {% render 'header' %}
+
+    <h1>A SHORT HISTORY OF THE ORPHAN TRAINS</h1>
+    <div class="paper">
+
+      <div class="page-1">
+        <h2>New York: A Growing Urban City</h2>
+        <p class="essayParagraph">In 1790, New York City’s population stood at about a meager 30,000 individuals compared
+          to the millions of inhabitants that would occupy the city a century later. New York City’s population would grow
+                                                                            to over 200,000 in 1830 and reach 800,000 inhabitants by 1860. In 1900, the city would experience a dramatic
+                                                                            explosion in population reaching a staggering 3.5 million.</p>
+
+        <p class="essayParagraph">The explosion in the city’s population stemmed from a multitude of factors. With easy
+          access to the Atlantic seaboard, New York City was becoming a central hub for international trade and business, as
+                                                                            well as becoming a center for industrial development. Many young men and women from rural communities came to the
+                                                                            city to find work within the growing wage labor system.</p>
+
+        <p class="essayParagraph">By 1825, with the completion of the Erie Canal (which allowed greater access and
+          transportation to the Great Lakes and further West), New York became the leading jumping off point for newly
+                                                                            arrived European immigrants seeking better fortunes in America. Yet, unable to complete their journey due to the
+                                                                            cost of travel, some immigrants remained stranded in the growing urban city.</p>
+
+
+        <h2>Changing Social Conditions: A Need for Reform</h2>
+        <p class="essayParagraph">The dramatic increase in population and radical transformation of the American economy
+          led to a significant shift in urban social conditions. The large influx of eager young folks and immigrants
+                                                                            seeking work led to an oversupply in the labor force, driving wages down in the city.</p>
+
+        <p class="essayParagraph">The inability to secure stable jobs and wages for growing families coupled with poor city
+          planning led to an increase in crowded tenement-style housing. These unhealthy living conditions made these
+                                                                            “poorer classes” more susceptible to various outbreaks of disease among both adults and children (children
+                                                                            regularly lost one or both parents, leading to an increase in child homelessness).</p>
+
+        <p class="essayParagraph">To supplement the income of their parent(s), especially in the event of a mother or
+          father’s death, children regularly sought wage labor to help support their families. Other times, single parents
+                                                                            left their children in the city (temporarily, and often with relatives) while seeking employment outside the city,
+                                                                            hoping to return.</p>
+
+        <p class="essayParagraph">The greater visibility of children laboring in industrial jobs, sleeping on the streets
+          due to homelessness, or stealing food due to hunger radically reimagined ideas of childhood in the American
+                                                                            nation.</p>
+
+
+        <h2>The Children’s Aid Society & Foundling Hospital</h2>
+        <p class="essayParagraph">As the visibility of children wandering the street increased alongside the
+          criminalization of youth vagrancy (homelessness) throughout the 1840s and 1850s, urban reform movements slowly
+                                                                            emerged to meet the needs of poor children in the city. Many of these reform movements had started out as
+                                                                            religious impulses against what was perceived to be growing vice in urban centers, following the stirrings of the
+                                                                            Second Great Awakening (beginning in the 1850s).</p>
+
+        <p class="essayParagraph">In 1853, Protestant minister, Charles Loring Brace initiated a century-long movement with
+          the founding of the Children’s Aid Society (CAS). Brace and other agents working with the CAS were determined to
+                                                                            rescue street children growing up in the heart of the vice and place them into the homes of hard-working families
+                                                                            who would provide them with religious instruction, basic education, and industrial training.</p>
+
+        <p class="essayParagraph">In 1869, the New York Foundling Hospital added to the top organizations dedicated to
+          placing children in new homes. Different than the CAS, the Foundling Hospital was primarily responsible for
+                                                                            placing infants and toddlers, mostly girls, into Catholic homes across the Nation.</p>
+
+        <p class="essayParagraph">Though these organizations, among hundreds more, are most known for sending children to
+          new homes in the west, the placing-out system only constituted a portion of the solutions they provided for urban
+                                                                            children.</p>
+        <button class="nextPage changePage" type="button">Next</button>
+      </div>
+      <div class="page-2">
+        <h2>Finding Homes for Children: The Allure of the West</h2>
+        <p class="essayParagraph">The West captivated the attention of many urban reformers as an idyllic setting for
+          children to grow up. Reformers believed that by placing children with the farm families in the west, urban
+                                                                          children could grow up in good Christian homes and learn the meaning of a good day’s work, far away from the
+                                                                          growing vice of the city.</p>
+
+        <p class="essayParagraph">The desire to send children to western farming communities was coupled with a national
+          demand in farm labor. Agricultural communities were experiencing a shift in small-scale production to larger
+                                                                          markets by the mid nineteenth century, putting a demand on labor needed to generate higher quantities.</p>
+
+        <p class="essayParagraph">Sending children to the west could fill this need, for children’s labor had always been
+          an essential element of family farms. Thus, the placement of children in the homes of farm families was believed
+                                                                          to be a natural solution to meet the demands of farm labor and placements for children. As the demand for farm
+                                                                          labor dwindled in the late 1920s, so did the Orphan Train placements.</p>
+
+
+        <h2>Legacies of the Movement: The Children’s Experiences</h2>
+        <p class="essayParagraph">The Children’s Aid Society and other sending organizations typically required family
+          consent to place children in new homes unless the child was proven to have no living relatives. (It was common for
+                                                                          children to have at least one living parent or relative who was unable to afford to provide for the child).</p>
+
+        <p class="essayParagraph">Children, in groups between a few months to 17 years, rode the trains across the west
+          with a sending agent and additional help, depending on the age of the children in the group. The trains that
+                                                                          carried children increased in conditions over time. Children typically took minimal items with them on the trains
+                                                                          because the sending organizations relied heavily on donated materials from the people of New York and communities
+                                                                          in which the trains stopped along the route.</p>
+
+        <p class="essayParagraph">At each stop, children were taken off and brought to a public meeting house, typically a
+          courthouse, church, or opera house, where families could come and pick the children to bring home. The child was
+                                                                          required to go willingly with the family, allowing children some control over the process of placement.</p>
+
+        <p class="essayParagraph">Families taking children were expected to furnish the children with basic necessities
+          (i.e. food, clothing, education) and expected to sign a contract with placing organizations to outline the terms
+                                                                          of the exchange. The intention of the contract was to alleviate any potential for abuse on part of the foster
+                                                                          family, and supervisors continued to check-in on the child year after year.</p>
+
+        <p class="essayParagraph">Despite the best intentions to supervise and vet all families taking the children,
+          scholars have found numerous instances of abuse in the Orphan Train’s placing-out system (physical, emotional, and
+                                                                          even sexual). Still, many of the children placed into homes were adopted into loving and caring families. The
+                                                                          experiences of the children placed west in states like Nebraska vary greatly, and many of their stories can be
+                                                                          found among this site.</p>
+        <button class="prevPage changePage" type="button">Previous</button>
+      </div>
+
+    </div>
+
+    {% render 'footer' %}
+  </body>
+
+</html>

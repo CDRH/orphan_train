@@ -1,0 +1,16 @@
+body {
+  background-color: #ffd490;
+  margin: 0;
+}
+
+div.dataTables_wrapper {
+  background-color: #fff;
+  width: 95%;
+  margin: 0 auto 3rem;
+  border: 2px solid #999;
+  padding: 1rem;
+}
+
+.dataTables_wrapper .dataTables_filter {
+  font-weight: bold;
+}

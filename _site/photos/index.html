@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="/css/photos.css">
+  <head>
+    <meta charset="utf-8">
+    <title>Orphan Train Passengers</title>
+
+  </head>
+  <body>
+
+    
+    <!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/css/header.css">
+<div class="title"> The Orphan Trains of Nebraska </div>
+<nav>
+    <a href="/">Home</a>
+    <a href="/table/">Passengers</a>
+    <a href="/background/">Background</a>
+    <a href="/about/">About Project</a>
+    <a href="/photos/">Photos</a>
+</nav>
+
+</html>
+      <div class="slideshow-wrapper">
+      <div class="slide">
+        <div class="counter">1/6</div>
+        <img src="/images/17954-resized.webp" alt="Photo of Panzer Brothers" />
+        <p class="caption">Photo of the Panzer Brothers, 1930.</p>
+        <div class="links">
+          Look here for more information: <br/>
+          <a href="../people/otr.ne01405/">Robert A. Panzer</a>
+          <a href="../people/otr.ne01404/">John C. Panzer</a>
+          <a href="../people/otr.ne01402">George Oliver Panzer</a>
+          <a href="../people/otr.ne01401">Edward Joseph Clarence Panzer</a>
+          <a href="../people/otr.ne01403">Harold J. Panzer</a>
+        </div>
+
+      </div>
+
+      <div class="slide">
+        <div class="counter">2/6</div>
+        <img src="/images/17955-resized.webp" alt="Photo of Robert Panzer" />
+        <p class="caption">Robert Panzer, New York, 1921.</p>
+        <div class="links">
+          Look here for more information: <br/>
+          <a href="../people/otr.ne01405/">Robert A. Panzer</a>
+        </div>
+
+      </div>
+
+      <div class="slide">
+        <div class="counter">3/6</div>
+        <img src="/images/17956-resized.webp" alt="Photo of Harold Panzer" />
+        <p class="caption">Harold Panzer, New York, 1921.</p>
+        <div class="links">
+          Look here for more information: <br/>
+          <a href="../people/otr.ne01403">Harold J. Panzer</a>
+        </div>
+
+      </div>
+
+      <div class="slide">
+        <div class="counter">4/6</div>
+        <img src="/images/17957-resized.webp" alt="Photo of John Panzer" />
+        <p class="caption">John Panzer, New York, 1921.</p>
+        <div class="links">
+          Look here for more information: <br/>
+          <a href="../people/otr.ne01404/">John C. Panzer</a>
+        </div>
+
+      </div>
+
+      <div class="slide">
+        <div class="counter">5/6</div>
+        <img src="/images/17958-resized.webp" alt="Photo of George Panzer" />
+        <p class="caption">John Panzer, New York, 1921.</p>
+        <div class="links">
+          Look here for more information: <br/>
+          <a href="../people/otr.ne01402">George Oliver Panzer</a>
+        </div>
+
+      </div>
+
+      <div class="slide">
+        <div class="counter">6/6</div>
+        <img src="/images/24422-resized.webp" alt="Photo of Toni Weiler" />
+        <p class="caption">Black and White Photographic Print of a Portrait of Toni Weiler. circa 1915</p>
+        <div class="links">
+          Look here for more information: <br/>
+          <a href="../people/otr.ne00894">Toni Weiler (Birth name Mary Brown)</a>
+        </div>
+
+      </div>
+
+
+      
+      <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+      <button class="next" onclick="plusSlides(1)">&#10095;</button>
+    </div>
+    <!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="/css/footer.css">
+  <div class="footer">
+  <hr/>
+  <div class="moreInfo">
+    <p class="footerInfo">Created by the
+    <a href="https://cdrh.unl.edu/">Center for Digital Research in the Humanities</a>
+    </p>
+    <a href="https://www.unl.edu/"><img src="/images/Nebraska Footer.png" width="100%" class="logo"/></a>
+  </div>
+  </div>
+</html>
+
+    <script>
+      // Used for the slideshow features
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+// Next/previous controls
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+// Thumbnail image controls
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        if (n > slides.length) {
+          slideIndex = 1
+        }
+        if (n < 1) {
+          slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+      }
+    </script>
+
+
+  </body>
+</html>
