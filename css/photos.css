@@ -63,6 +63,16 @@ body {
   font-size: 2rem;
 }
 
+a.passengerLink,
+a.passengerLink:visited {
+  color: #090c9b;
+  display: inline-block;
+}
+
+a.passengerLink:hover {
+  color: #3d52d5;
+}
+
 .links {
   text-align: center;
   font-size: 2rem;
