@@ -50,6 +50,13 @@ permalink: "people/{{ record.AutoID | slug }}/"
         {% else %}
           Unknown
         {% endunless %}
+        {% unless record["Family Taking Child Alt"] == empty %}
+          <li>
+            <b>Foster Family Alt:
+            </b>
+            {{ record["Family Taking Child Alt"] }}
+          </li>
+        {% endunless %}
 
         <li>
           <b>Location of Family:</b>
@@ -121,6 +128,15 @@ permalink: "people/{{ record.AutoID | slug }}/"
             <b>Spouse Name:</b>
             {{ record["Spouse Name First"] }} {{ record["Spouse Name Middle"] }} {{ record["Spouse Name Last"] }}</li>
         {% endunless %}
+        {% unless record["Additional Notes Public"] == empty %}
+          <li>
+            <b>Notes:
+            </b>
+            {{ record["Additional Notes Public"] }}
+          </li>
+        {% endunless %}
+
+
         {% unless record["Sources Used"] == empty %}
           <li>
             <b>Source:
