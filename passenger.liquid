@@ -28,36 +28,74 @@ permalink: "people/{{ record.AutoID | slug }}/"
             {{ record["Birth Name Alt"] }}</li>
         {% endunless %}
         <li>
+
           <b>Foster Name:</b>
-          {{ record["Adopted Name First"] }}
-          {% unless record["Adopted Name Alt"] == empty %}
-            ({{ record["Adopted Name Alt"] }})
+          {% unless record["Adopted Name First"] == empty and record["Adopted Name Middle"] == empty and record["Adopted Name Last"] == empty %}
+            {{ record["Adopted Name First"] }}
+            {{ record["Adopted Name Middle"] }} {{ record["Adopted Name Last"] }}
+          {% else %}
+            Unknown
           {% endunless %}
-          {{ record["Adopted Name Middle"] }} {{ record["Adopted Name Last"] }}
         </li>
+        {% unless record["Adopted Name Alt"] == empty %}
+          <li>
+            <b>Alternate Foster Name:</b>
+            {{ record["Adopted Name Alt"] }}
+          </li>
+        {% endunless %}
         <li>
           <b>Foster Family:</b>
-          {{ record["Family Taking Child First"] }} {{ record["Family Taking Child Middle"] }} {{ record["Family Taking Child Last"] }}</li>
+          {% unless record["Family Taking Child First"] == empty and record["Family Taking Child Middle"] == empty and record["Family Taking Child Last"] == empty %}
+            {{ record["Family Taking Child First"] }} {{ record["Family Taking Child Middle"] }} {{ record["Family Taking Child Last"] }}</li>
+        {% else %}
+          Unknown
+        {% endunless %}
+
         <li>
           <b>Location of Family:</b>
-          {{ record["Location of Family"] }}
+          {% unless record["Location of Family"] == empty %}
+            {{ record["Location of Family"] }}
+          {% else %}
+            Unknown
+          {% endunless %}
+
         </li>
 
 
         <li>
           <b>Sending Organization:</b>
-          {{ record["Sending Organization"] }}</li>
+          {% unless record["Sending Organization"] == empty %}
+            {{ record["Sending Organization"] }}
+          {% else %}
+            Unknown
+          {% endunless %}
+        </li>
         <li>
           <b>Arrival Place:</b>
-          {{ record["Arrival Place"] }}
+          {% unless record["Arrival Place"] == empty %}
+            {{ record["Arrival Place"] }}
+          {% else %}
+            Unknown
+          {% endunless %}
+
         </li>
         <li>
           <b>Age on Arrival:</b>
-          {{ record["Age on Arrival in Years"] }}</li>
+          {% unless record["Age on Arrival in Years"] == empty %}
+            {{ record["Age on Arrival in Years"] }}
+          {% else %}
+            Unknown
+          {% endunless %}
+        </li>
         <li>
           <b>Date of Birth:</b>
-          {{ record["Date of Birth"] }}{% unless record["Place of Birth"] == empty %}, {{ record["Place of Birth"] }}
+          {% unless record["Date of Birth"] == empty and record["Place of Birth"] == empty %}
+            {{ record["Date of Birth"] }}{% unless record["Place of Birth"] == empty %}, {{ record["Place of Birth"] }}
+            {% endunless %}
+          {% else %}
+            Unknown
           {% endunless %}
+
         </li>
         {% unless record["Date of Death"] == empty %}
           <li>
@@ -83,11 +121,14 @@ permalink: "people/{{ record.AutoID | slug }}/"
             <b>Spouse Name:</b>
             {{ record["Spouse Name First"] }} {{ record["Spouse Name Middle"] }} {{ record["Spouse Name Last"] }}</li>
         {% endunless %}
-        <li>
-          <b>Source:
-          </b>
-          {{ record["Sources Used"] }}
-        </li>
+        {% unless record["Sources Used"] == empty %}
+          <li>
+            <b>Source:
+            </b>
+            {{ record["Sources Used"] }}
+          </li>
+        {% endunless %}
+
       </ol>
     </div>
     <a href="/table/" class="clickHere">
