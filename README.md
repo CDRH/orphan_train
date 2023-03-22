@@ -20,12 +20,13 @@ Explanation: Some columns had empty values that were represented by an empty str
 2. Find: \](\d)\]
 Replace: [$1]
 
-Explanation: Some bracketed data was incorrectly bracketed (]7]). This was to correct that
+Explanation: Some bracketed data was incorrectly bracketed (]7]). This was to correct that.
 
 4. Find: Sates
 Replace: States
 
 Explanation: Correcting spelling
+affected 446, 1424, 1425, 1426, 1427
 
 5. Removed space from the end of column header "Adopted Name Last "
 Explanation: Data correction
