@@ -37,7 +37,7 @@
   </head>
   <body>
     {% render 'header' %}
-      <div class="background">
+      <div class="pageBody">
       <h1>Passengers on the Orphan Train</h1>
       {% comment %}
       add the id so DataTables knows what's going on. 
@@ -102,6 +102,10 @@
           {% endfor %}
         </tbody>
       </table>
+      <a
+        download
+        href="/_data/Orphan_Train_Data.csv"
+        class="downloadButton">Download CSV</a>
     </div>
     {% render 'footer' %}
   </body>

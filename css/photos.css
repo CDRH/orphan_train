@@ -2,6 +2,8 @@ body {
   background-color: #ffd490;
 }
 
+
+
 .slideshow-wrapper {
   margin: 0 auto;
   /*Size of pics*/
@@ -20,7 +22,7 @@ body {
   left: 1rem;
   top: 5px;
   font-size: 2rem;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   padding: 5px;
   border-radius: 10px;
 }

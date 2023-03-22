@@ -1,0 +1,154 @@
+---
+pagination:
+    data: Orphan_Train_Data
+    size: 1
+    alias: record
+permalink: "people/{{ record.AutoID | slug }}/"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="/css/passenger.css">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ record.AutoID }}</title>
+  </head>
+  <body>
+    {% render 'header' %}
+    <div class="paper">
+      <h1>{{ record["Birth Name First"] }}
+        {% unless record["Birth Name Middle"] == empty %}
+          {{ record["Birth Name Middle"] }}
+        {% endunless %}
+        {{ record["Birth Name Last"] }}</h1>
+      <ol>
+        {% unless record["Birth Name Alt"] == empty %}
+          <li>
+            <b>Alternate Birth Name:</b>
+            {{ record["Birth Name Alt"] }}</li>
+        {% endunless %}
+        <li>
+
+          <b>Foster Name:</b>
+          {% unless record["Adopted Name First"] == empty and record["Adopted Name Middle"] == empty and record["Adopted Name Last"] == empty %}
+            {{ record["Adopted Name First"] }}
+            {{ record["Adopted Name Middle"] }} {{ record["Adopted Name Last"] }}
+          {% else %}
+            Unknown
+          {% endunless %}
+        </li>
+        {% unless record["Adopted Name Alt"] == empty %}
+          <li>
+            <b>Alternate Foster Name:</b>
+            {{ record["Adopted Name Alt"] }}
+          </li>
+        {% endunless %}
+        <li>
+          <b>Foster Family:</b>
+          {% unless record["Family Taking Child First"] == empty and record["Family Taking Child Middle"] == empty and record["Family Taking Child Last"] == empty %}
+            {{ record["Family Taking Child First"] }} {{ record["Family Taking Child Middle"] }} {{ record["Family Taking Child Last"] }}</li>
+        {% else %}
+          Unknown
+        {% endunless %}
+        {% unless record["Family Taking Child Alt"] == empty %}
+          <li>
+            <b>Foster Family Alt:
+            </b>
+            {{ record["Family Taking Child Alt"] }}
+          </li>
+        {% endunless %}
+
+        <li>
+          <b>Location of Family:</b>
+          {% unless record["Location of Family"] == empty %}
+            {{ record["Location of Family"] }}
+          {% else %}
+            Unknown
+          {% endunless %}
+
+        </li>
+
+
+        <li>
+          <b>Sending Organization:</b>
+          {% unless record["Sending Organization"] == empty %}
+            {{ record["Sending Organization"] }}
+          {% else %}
+            Unknown
+          {% endunless %}
+        </li>
+        <li>
+          <b>Arrival Place:</b>
+          {% unless record["Arrival Place"] == empty %}
+            {{ record["Arrival Place"] }}
+          {% else %}
+            Unknown
+          {% endunless %}
+
+        </li>
+        <li>
+          <b>Age on Arrival:</b>
+          {% unless record["Age on Arrival in Years"] == empty %}
+            {{ record["Age on Arrival in Years"] }}
+          {% else %}
+            Unknown
+          {% endunless %}
+        </li>
+        <li>
+          <b>Date of Birth:</b>
+          {% unless record["Date of Birth"] == empty and record["Place of Birth"] == empty %}
+            {{ record["Date of Birth"] }}{% unless record["Place of Birth"] == empty %}, {{ record["Place of Birth"] }}
+            {% endunless %}
+          {% else %}
+            Unknown
+          {% endunless %}
+
+        </li>
+        {% unless record["Date of Death"] == empty %}
+          <li>
+            <b>Date of Death:</b>
+            {{ record["Date of Death"] }}{% unless record["Place of Death"] == empty %}, {{ record["Place of Death"] }}
+            {% endunless %}
+          </li>
+        {% endunless %}
+        <li>
+          <b>Gender:</b>
+          {{ record["Gender"] }}</li>
+        {% unless record["Married Name Last"] == empty %}
+          <li>
+            <b>Married Name:</b>
+            {{ record["Married Name First"] }}
+            {% unless record["Married Name Alt"] == empty %}
+              ({{ record["Married Name Alt"] }})
+            {% endunless %}
+            {{ record["Married Name Middle"] }} {{ record["Married Name Last"] }}</li>
+        {% endunless %}
+        {% unless record["Spouse Name Last"] == empty %}
+          <li>
+            <b>Spouse Name:</b>
+            {{ record["Spouse Name First"] }} {{ record["Spouse Name Middle"] }} {{ record["Spouse Name Last"] }}</li>
+        {% endunless %}
+        {% unless record["Additional Notes Public"] == empty %}
+          <li>
+            <b>Notes:
+            </b>
+            {{ record["Additional Notes Public"] }}
+          </li>
+        {% endunless %}
+
+
+        {% unless record["Sources Used"] == empty %}
+          <li>
+            <b>Source:
+            </b>
+            {{ record["Sources Used"] }}
+          </li>
+        {% endunless %}
+
+      </ol>
+    </div>
+    <a href="/table/" class="clickHere">
+      Return to Passengers</a>
+    {% render 'footer' %}
+  </body>
+</html>
