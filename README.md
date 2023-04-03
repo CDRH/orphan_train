@@ -30,3 +30,5 @@ affected 446, 1424, 1425, 1426, 1427
 
 5. Removed space from the end of column header "Adopted Name Last "
 Explanation: Data correction
+  
+6. Removed brackets surrounding numbers
