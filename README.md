@@ -12,8 +12,8 @@ To run with updated data, replace the Orphan_Train_Data.csv file with the update
 
 The following were steps taken to clean data already:
 1. Find: `,"`  
-`",`
-Replace: `,,`
+`",`  
+Replace: `,,`  
 
 Explanation: Some columns had empty values that were represented by an empty string (""). The table works better if the columns are empty entirely.
 
