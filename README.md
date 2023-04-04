@@ -11,9 +11,9 @@ npm run start (if running live website)
 To run with updated data, replace the Orphan_Train_Data.csv file with the updated data (using the same name of Orphan_Train_Data.csv) and rerun one of the commands above.
 
 The following were steps taken to clean data already:
-1. Find: ,"
-",
-Replace: ,,
+1. Find: `,"`  
+`",`
+Replace: `,,`
 
 Explanation: Some columns had empty values that were represented by an empty string (""). The table works better if the columns are empty entirely.
 
