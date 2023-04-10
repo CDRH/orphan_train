@@ -28,9 +28,25 @@
       });
     });
   </script>
+  <script>
+    function correctAge(numString){
+      if numString.includes("mos."){
+        //We assume it was in months, convert to equivalent years
+        //parseFloat gets rid of the mos. part
+        let actualAge = parseFloat(stringArray[0]) / 12;
+        //turn to string and trim to 2 decimals
+        let display = actualAge.toFixed(2);
+        return display;
+
+      } else {
+        return numString
+      }
+    }
+  </script>
   {% comment %}
   end of DataTables setup
-  {% endcomment %}<head>
+  {% endcomment %}
+  <head>
     <meta charset="utf-8">
     <title>Orphan Train Passengers</title>
 
@@ -83,7 +99,8 @@
                 </a>
               </td>
               <td>{{ record["Birth Name Alt"] }}</td>
-              <td>{{ record["Age on Arrival in Years"] }}</td>
+              {% comment  %} The following is still WIP: data-order="{{correctAge(record["Age on Arrival in Years"])}}" {% endcomment %}
+              <td >{{ record["Age on Arrival in Years"] }}</td>
               <td>{{ record["Sending Organization"] }}</td>
               <td>{{ record["Adopted Name First"] }} {{ record["Adopted Name Middle"] }} {{ record["Adopted Name Last"] }}</td>
               <td>{{ record["Adopted Name Alt"] }}</td>

@@ -11,11 +11,6 @@ npm run start (if running live website)
 To run with updated data, replace the Orphan_Train_Data.csv file with the updated data (using the same name of Orphan_Train_Data.csv) and rerun one of the commands above.
 
 The following were steps taken to clean data already:
-1. Find: `,"`  
-`",`  
-Replace: `,,`  
-
-Explanation: Some columns had empty values that were represented by an empty string (""). The table works better if the columns are empty entirely.
 
 2. Find: \](\d)\]
 Replace: [$1]
@@ -30,5 +25,3 @@ affected 446, 1424, 1425, 1426, 1427
 
 5. Removed space from the end of column header "Adopted Name Last "
 Explanation: Data correction
-  
-6. Removed brackets surrounding numbers
