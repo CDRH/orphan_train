@@ -1,5 +1,5 @@
 const papa = require('papaparse');
-const relativeUrl = require('eleventy-filter-relative-url');
+//const path = require('path');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addDataExtension("csv", (contents) => {
@@ -10,8 +10,19 @@ module.exports = function (eleventyConfig) {
   });
 
 
-  // Override the default `url` filter with a relative one.
-  eleventyConfig.addFilter('url', relativeUrl);
+  // shortcode method to turn absolute link to relative
+  eleventyConfig.addShortcode("relativeUrl", function (url) {
+    if (!url.startsWith("/")) {
+      //URL is already relative
+      return url;
+    }
+    // See https://www.11ty.dev/docs/languages/liquid/ for more info on page
+    // variables.
+    let path = require('path');
+
+    const relativeUrl = path.relative(this.page.url, url); // Use page.url instead of page.filePathStem
+    return relativeUrl;
+  });
 
   //used so we can have css files and assets that are copied to the ending website
   eleventyConfig.addPassthroughCopy('css')
