@@ -2,13 +2,13 @@
 <html lang="en">
   {% comment %}
   This is used to set up DataTables
-  {% endcomment %}<script src= {% relativeUrl "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" %}></script>
-  <script type="text/javascript" src= {% relativeUrl "https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" %}></script>
+  {% endcomment %}<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
   <link
     rel="stylesheet"
     type="text/css"
-    href= {% relativeUrl "https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css" %}>
-  <link rel="stylesheet" href= {% relativeUrl "../css/table.css" %}>
+    href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+  <link rel="stylesheet" href="../css/table.css">
   <script>
     $(document).ready(function() {
       $('#table').DataTable({
@@ -88,7 +88,7 @@
           {% for record in Orphan_Train_Data %}
             <tr>
               <td>
-                <a href= {% relativeUrl "../people/{{record.AutoID}}/" %}>
+                <a href="../people/{{record.AutoID}}/">
                   {% unless record["Birth Name First"] == empty and record["Birth Name Middle"] == empty and record["Birth Name Last"] == empty %}
                     {{ record["Birth Name First"] }} {{ record["Birth Name Middle"] }} {{ record["Birth Name Last"] }}
 
@@ -121,7 +121,7 @@
       </table>
       <a
         download
-        href= {% relativeUrl "/_data/Orphan_Train_Data.csv" %}
+        href="/_data/Orphan_Train_Data.csv"
         class="downloadButton">Download CSV</a>
     </div>
     {% render 'footer' %}

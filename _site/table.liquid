@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% comment %}
+  This is used to set up DataTables
+  {% endcomment %}<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+  <link rel="stylesheet" href="../css/table.css">
+  <script>
+    $(document).ready(function() {
+      $('#table').DataTable({
+        stateSave: true,
+        scrollY: '70vh',
+        scrollCollapse: true,
+        scrollX: true,
+        "lengthMenu": [
+          [
+            50, 100, 200, -1
+          ],
+          [
+
+            50, 100, 200, 'All'
+          ]
+        ]
+      });
+    });
+  </script>
+  {% comment %}
+  end of DataTables setup
+  {% endcomment %}<head>
+    <meta charset="utf-8">
+    <title>Orphan Train Passengers</title>
+
+  </head>
+  <body>
+    {% render 'header' %}
+    <h1>Passengers on the Orphan Train</h1>
+    {% comment %}
+    add the id so DataTables knows what's going on. 
+    Class is how you select your styles
+    {% endcomment %}
+    <table
+      id="table"
+      class="display compact"
+      style="width:100%">
+      <thead>
+        <tr>
+          <th>Birth Name</th>
+          <th>Birth Name Alt</th>
+          <th>Age on Arrival</th>
+          <th>Sending Organization</th>
+          <th>Foster Name</th>
+          <th>Foster Name Alt</th>
+          <th>Married Name</th>
+          <th>Married Name Alt</th>
+          <th>Spouse Name</th>
+          <th>Spouse Name Alt</th>
+          <th>Arrival Date</th>
+          <th>Arrival Place</th>
+          <th>Family Taking Child</th>
+          <th>Family Taking Child Alt</th>
+          <th>Location of Family</th>
+          <th>Date of Birth</th>
+          <th>Place of Birth</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for record in Orphan_Train_Data %}
+          <tr>
+            <td>
+              <a href="../people/{{record.AutoID}}/">
+                {% unless record["Birth Name First"] == empty and record["Birth Name Middle"] == empty and record["Birth Name Last"] == empty %}
+                  {{ record["Birth Name First"] }} {{ record["Birth Name Middle"] }} {{ record["Birth Name Last"] }}
+
+                {% else %}
+                  Link to Page
+                {% endunless %}
+
+              </a>
+            </td>
+            <td>{{ record["Birth Name Alt"] }}</td>
+            <td>{{ record["Age on Arrival in Years"] }}</td>
+            <td>{{ record["Sending Organization"] }}</td>
+            <td>{{ record["Adopted Name First"] }} {{ record["Adopted Name Middle"] }} {{ record["Adopted Name Last"] }}</td>
+            <td>{{ record["Adopted Name Alt"] }}</td>
+            <td>{{ record["Married Name First"] }} {{ record["Married Name Middle"] }} {{ record["Married Name Last"] }}</td>
+            <td>{{ record["Married Name Alt"] }}</td>
+            <td>{{ record["Spouse Name First"] }} {{ record["Spouse Name Middle"] }} {{ record["Spouse Name Last"] }}</td>
+            <td>{{ record["Spouse Name Alt"] }}</td>
+            <td>{{ record["Arrival Date"] }}</td>
+            <td>{{ record["Arrival Place"] }}</td>
+            <td>{{ record["Family Taking Child First"] }} {{ record["Family Taking Child Middle"] }} {{ record["Family Taking Child Last"] }}</td>
+            <td>{{ record["Family Taking Child Alt"] }}</td>
+            <td>{{ record["Location of Family"] }}</td>
+            <td>{{ record["Date of Birth"] }}</td>
+            <td>{{ record["Place of Birth"] }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="/_data/Orphan_Train_Data.csv" download>Download Here</a>
+    {% render 'footer' %}
+  </body>
+</html>
