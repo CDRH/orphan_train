@@ -10,18 +10,21 @@ module.exports = function (eleventyConfig) {
   });
 
 
-  // shortcode method to turn absolute link to relative
+  // shortcode method to turn root-relative link to relative
   eleventyConfig.addShortcode("relativeUrl", function (url) {
-    if (!url.startsWith("/")) {
-      //URL is already relative
+    //url should be "/like/this" if root-relative
+    if (url.startsWith("/")) {
+      // See https://www.11ty.dev/docs/languages/liquid/ for more info on page
+      // variables.
+      let path = require('path');
+
+      const relativeUrl = path.relative(this.page.url, url); // Use page.url instead of page.filePathStem
+      return relativeUrl;
+    } else {
+      //URL is already relative/absolute
       return url;
     }
-    // See https://www.11ty.dev/docs/languages/liquid/ for more info on page
-    // variables.
-    let path = require('path');
 
-    const relativeUrl = path.relative(this.page.url, url); // Use page.url instead of page.filePathStem
-    return relativeUrl;
   });
 
   //used so we can have css files and assets that are copied to the ending website

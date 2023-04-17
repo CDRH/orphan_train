@@ -52,7 +52,8 @@
 
   </head>
   <body>
-    {% render 'header' %}
+  {% capture baseRoot %}{% relativeUrl "/" %}{% endcapture %}
+    {% render 'header', urlRoot:baseRoot %}
       <div class="pageBody">
       <h1>Passengers on the Orphan Train</h1>
       {% comment %}
