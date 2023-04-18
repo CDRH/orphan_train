@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href={% relativeUrl "/css/home.css" %}>
   <head>
     <meta charset="utf-8">
     <title>Orphan Train Passengers</title>
@@ -9,14 +9,18 @@
   <body>
     {% comment %}
     This is the landing/home page for the Orphan Train Website
+
+    The index page's urlRoot for the header and footer is slightly different because it is already at the root of the site. There are no calculations that need to be made. 
     {% endcomment %}
-    {% render 'header' %}
+    {% assign baseRoot = "." %}
+
+    {% render 'header', urlRoot: baseRoot %}
     <img
-      src="/images/1388-resized.webp"
+      src={% relativeUrl "/images/1388-resized.webp" %}
       alt="Photo of train"
       class="train" />
-    <a href="/table/" class="clickHere">
+    <a href={% relativeUrl "/table/index.html" %} class="clickHere">
       Click here to see the list of passengers</a>
-    {% render 'footer' %}
+    {% render 'footer', urlRoot: baseRoot %}
   </body>
 </html>

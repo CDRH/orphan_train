@@ -8,13 +8,16 @@ permalink: "people/{{ record.AutoID | slug }}/"
 
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" href="/css/passenger.css">
+  <link rel="stylesheet" href= {% relativeUrl "/css/passenger.css" %}>
   <head>
     <meta charset="utf-8">
     <title>{{ record.AutoID }}</title>
   </head>
   <body>
-    {% render 'header' %}
+    {% capture baseRoot %}
+    {% relativeUrl "/" %}{% endcapture %}
+
+    {% render 'header', urlRoot:baseRoot %}
     <div class="paper">
       <h1>{{ record["Birth Name First"] }}
         {% unless record["Birth Name Middle"] == empty %}
@@ -147,8 +150,8 @@ permalink: "people/{{ record.AutoID | slug }}/"
 
       </ol>
     </div>
-    <a href="/table/" class="clickHere">
+    <a href= {% relativeUrl "/table/index.html" %} class="clickHere">
       Return to Passengers</a>
-    {% render 'footer' %}
+    {% render 'footer', urlRoot:baseRoot %}
   </body>
 </html>

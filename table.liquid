@@ -8,7 +8,7 @@
     rel="stylesheet"
     type="text/css"
     href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
-  <link rel="stylesheet" href="../css/table.css">
+  <link rel="stylesheet" href= {% relativeUrl "/css/table.css" %}>
   <script>
     $(document).ready(function() {
       $('#table').DataTable({
@@ -28,15 +28,32 @@
       });
     });
   </script>
+  <script>
+    function correctAge(numString){
+      if numString.includes("mos."){
+        //We assume it was in months, convert to equivalent years
+        //parseFloat gets rid of the mos. part
+        let actualAge = parseFloat(stringArray[0]) / 12;
+        //turn to string and trim to 2 decimals
+        let display = actualAge.toFixed(2);
+        return display;
+
+      } else {
+        return numString
+      }
+    }
+  </script>
   {% comment %}
-  end of DataTables setup
-  {% endcomment %}<head>
+   DataTables setup done
+  {% endcomment %}
+  <head>
     <meta charset="utf-8">
     <title>Orphan Train Passengers</title>
 
   </head>
   <body>
-    {% render 'header' %}
+  {% capture baseRoot %}{% relativeUrl "/" %}{% endcapture %}
+    {% render 'header', urlRoot:baseRoot %}
       <div class="pageBody">
       <h1>Passengers on the Orphan Train</h1>
       {% comment %}
@@ -72,7 +89,8 @@
           {% for record in Orphan_Train_Data %}
             <tr>
               <td>
-                <a href="../people/{{record.AutoID}}/">
+                {% comment %} This is already a working relative link, no need to change anything {% endcomment %}
+                <a href="../people/{{record.AutoID}}/index.html">
                   {% unless record["Birth Name First"] == empty and record["Birth Name Middle"] == empty and record["Birth Name Last"] == empty %}
                     {{ record["Birth Name First"] }} {{ record["Birth Name Middle"] }} {{ record["Birth Name Last"] }}
 
@@ -83,7 +101,8 @@
                 </a>
               </td>
               <td>{{ record["Birth Name Alt"] }}</td>
-              <td>{{ record["Age on Arrival in Years"] }}</td>
+              {% comment  %} The following is still WIP: data-order="{{correctAge(record["Age on Arrival in Years"])}}" {% endcomment %}
+              <td >{{ record["Age on Arrival in Years"] }}</td>
               <td>{{ record["Sending Organization"] }}</td>
               <td>{{ record["Adopted Name First"] }} {{ record["Adopted Name Middle"] }} {{ record["Adopted Name Last"] }}</td>
               <td>{{ record["Adopted Name Alt"] }}</td>
@@ -104,9 +123,9 @@
       </table>
       <a
         download
-        href="/_data/Orphan_Train_Data.csv"
+        href= {% relativeUrl "/_data/Orphan_Train_Data.csv" %}
         class="downloadButton">Download CSV</a>
     </div>
-    {% render 'footer' %}
+    {% render 'footer', urlRoot:baseRoot %}
   </body>
 </html>
