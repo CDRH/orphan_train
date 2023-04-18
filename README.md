@@ -24,7 +24,7 @@ By default, the links eleventy generates will be root relative. This works fine 
 The solution is to wrap the following around the link: `{% relativeUrl **"/your-root-relative-link-here/"** %}`. This uses a shortcode found in the .eleventy.js file to turn the root-relative link to a relative link.
 
 # Adding a new page
-When making a new `.liquid` page, the header and footer can be added by using `{%render header urlRoot: baseRoot %}`. The baseRoot is to turn the header/footer's links into a working relative link, similar to what was mentioned above. The baseRoot can be calculated by adding the following line on your page:
+When making a new `.liquid` page, the header and footer can be added by using `{%render 'header' urlRoot: baseRoot %}`. The baseRoot is to turn the header/footer's links into a working relative link, similar to what was mentioned above. The baseRoot can be calculated by adding the following line on your page:
 
 `{% capture baseRoot %}{% relativeUrl "/" %}{% endcapture %}`
 
