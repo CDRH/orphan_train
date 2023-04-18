@@ -27,7 +27,8 @@ nav a {
   text-align: center;
   text-decoration: none;
   margin-top: auto;
-  width: 20%;
+  /*Number of pages at the top*/
+  width: calc(100% / 6);
   padding-bottom: 0.5rem;
 }
 
