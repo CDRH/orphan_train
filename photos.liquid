@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" href= {% relativeUrl "/css/photos.css" %}>
+  <link rel="stylesheet" href={% relativeUrl "/css/photos.css" %}>
   <head>
     <meta charset="utf-8">
     <title>Orphan Train Passengers</title>
@@ -11,74 +11,76 @@
     {% comment %}
     This contains all photos and links to the pages
     {% endcomment %}
-    {% render 'header' %}
+    {% capture baseRoot %}
+      {% relativeUrl "/" %}{% endcapture %}
+    {% render 'header', urlRoot: baseRoot %}
       <div class="slideshow-wrapper">
       <div class="slide">
         <div class="counter">1/6</div>
-        <img src= {% relativeUrl "/images/17954-resized.webp" %} alt="Photo of Panzer Brothers" />
+        <img src={% relativeUrl "/images/17954-resized.webp" %} alt="Photo of Panzer Brothers" />
         <p class="caption">Photo of the Panzer Brothers, 1930.</p>
         <div class="links">
           Look here for more information: <br/>
-          <a href= {% relativeUrl "/people/otr.ne01405/index.html" %} class="passengerLink">Robert A. Panzer</a>
-          <a href= {% relativeUrl "/people/otr.ne01404/index.html" %} class="passengerLink">John C. Panzer</a>
-          <a href= {% relativeUrl "/people/otr.ne01402/index.html" %} class="passengerLink">George Oliver Panzer</a>
-          <a href= {% relativeUrl "/people/otr.ne01401/index.html" %} class="passengerLink">Edward Joseph Clarence Panzer</a>
-          <a href= {% relativeUrl "/people/otr.ne01403/index.html" %} class="passengerLink">Harold J. Panzer</a>
+          <a href={% relativeUrl "/people/otr.ne01405/index.html" %} class="passengerLink">Robert A. Panzer</a>
+          <a href={% relativeUrl "/people/otr.ne01404/index.html" %} class="passengerLink">John C. Panzer</a>
+          <a href={% relativeUrl "/people/otr.ne01402/index.html" %} class="passengerLink">George Oliver Panzer</a>
+          <a href={% relativeUrl "/people/otr.ne01401/index.html" %} class="passengerLink">Edward Joseph Clarence Panzer</a>
+          <a href={% relativeUrl "/people/otr.ne01403/index.html" %} class="passengerLink">Harold J. Panzer</a>
         </div>
 
       </div>
 
       <div class="slide">
         <div class="counter">2/6</div>
-        <img src= {% relativeUrl "/images/17955-resized.webp" %} alt="Photo of Robert Panzer" />
+        <img src={% relativeUrl "/images/17955-resized.webp" %} alt="Photo of Robert Panzer" />
         <p class="caption">Robert Panzer, New York, 1921.</p>
         <div class="links">
           Look here for more information: <br/>
-          <a href= {% relativeUrl "/people/otr.ne01405/index.html" %} class="passengerLink">Robert A. Panzer</a>
+          <a href={% relativeUrl "/people/otr.ne01405/index.html" %} class="passengerLink">Robert A. Panzer</a>
         </div>
 
       </div>
 
       <div class="slide">
         <div class="counter">3/6</div>
-        <img src= {% relativeUrl "/images/17956-resized.webp" %} alt="Photo of Harold Panzer" />
+        <img src={% relativeUrl "/images/17956-resized.webp" %} alt="Photo of Harold Panzer" />
         <p class="caption">Harold Panzer, New York, 1921.</p>
         <div class="links">
           Look here for more information: <br/>
-          <a href= {% relativeUrl "/people/otr.ne01403/index.html" %} class="passengerLink">Harold J. Panzer</a>
+          <a href={% relativeUrl "/people/otr.ne01403/index.html" %} class="passengerLink">Harold J. Panzer</a>
         </div>
 
       </div>
 
       <div class="slide">
         <div class="counter">4/6</div>
-        <img src= {% relativeUrl "/images/17957-resized.webp" %} alt="Photo of John Panzer" />
+        <img src={% relativeUrl "/images/17957-resized.webp" %} alt="Photo of John Panzer" />
         <p class="caption">John Panzer, New York, 1921.</p>
         <div class="links">
           Look here for more information: <br/>
-          <a href= {% relativeUrl "/people/otr.ne01404/index.html" %} class="passengerLink">John C. Panzer</a>
+          <a href={% relativeUrl "/people/otr.ne01404/index.html" %} class="passengerLink">John C. Panzer</a>
         </div>
 
       </div>
 
       <div class="slide">
         <div class="counter">5/6</div>
-        <img src= {% relativeUrl "/images/17958-resized.webp" %} alt="Photo of George Panzer" />
+        <img src={% relativeUrl "/images/17958-resized.webp" %} alt="Photo of George Panzer" />
         <p class="caption">John Panzer, New York, 1921.</p>
         <div class="links">
           Look here for more information: <br/>
-          <a href= {% relativeUrl "/people/otr.ne01402/index.html" %} class="passengerLink">George Oliver Panzer</a>
+          <a href={% relativeUrl "/people/otr.ne01402/index.html" %} class="passengerLink">George Oliver Panzer</a>
         </div>
 
       </div>
 
       <div class="slide">
         <div class="counter">6/6</div>
-        <img src= {% relativeUrl "/images/24422-resized.webp" %} alt="Photo of Toni Weiler" />
+        <img src={% relativeUrl "/images/24422-resized.webp" %} alt="Photo of Toni Weiler" />
         <p class="caption">Black and White Photographic Print of a Portrait of Toni Weiler. circa 1915</p>
         <div class="links">
           Look here for more information: <br/>
-          <a href= {% relativeUrl "/people/otr.ne00894/index.html" %} class="passengerLink">Toni Weiler (Birth name Mary Brown)</a>
+          <a href={% relativeUrl "/people/otr.ne00894/index.html" %} class="passengerLink">Toni Weiler (Birth name Mary Brown)</a>
         </div>
 
       </div>
@@ -94,7 +96,7 @@
       <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
       <button class="next" onclick="plusSlides(1)">&#10095;</button>
     </div>
-    {% render 'footer' %}
+    {% render 'footer', urlRoot: baseRoot %}
 
     <script>
       // Used for the slideshow features

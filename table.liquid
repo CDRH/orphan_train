@@ -44,7 +44,7 @@
     }
   </script>
   {% comment %}
-  end of DataTables setup
+   DataTables setup done
   {% endcomment %}
   <head>
     <meta charset="utf-8">
@@ -89,6 +89,7 @@
           {% for record in Orphan_Train_Data %}
             <tr>
               <td>
+                {% comment %} This is already a working relative link, no need to change anything {% endcomment %}
                 <a href="../people/{{record.AutoID}}/index.html">
                   {% unless record["Birth Name First"] == empty and record["Birth Name Middle"] == empty and record["Birth Name Last"] == empty %}
                     {{ record["Birth Name First"] }} {{ record["Birth Name Middle"] }} {{ record["Birth Name Last"] }}
@@ -125,6 +126,6 @@
         href= {% relativeUrl "/_data/Orphan_Train_Data.csv" %}
         class="downloadButton">Download CSV</a>
     </div>
-    {% render 'footer' %}
+    {% render 'footer', urlRoot:baseRoot %}
   </body>
 </html>
