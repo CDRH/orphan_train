@@ -2,8 +2,6 @@ body {
   background-color: #ffd490;
 }
 
-
-
 .slideshow-wrapper {
   margin: 0 auto;
   /*Size of pics*/
@@ -34,7 +32,8 @@ body {
   position: absolute;
   top: 50%;
   width: auto;
-  margin-top: -14rem;
+  /*used to keep the padding centered*/
+  margin-top: -8rem;
   padding: 8rem 1rem;
   color: white;
   font-weight: bold;
