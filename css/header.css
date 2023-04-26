@@ -35,3 +35,7 @@ nav a {
 nav a:hover {
   background-color: #9aa29b;
 }
+
+div.header {
+  width: 100%;
+}
