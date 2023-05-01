@@ -1,5 +1,7 @@
 body {
   background-color: #ffd490;
+  /*For some reason, there's an added margin that shouldn't be there.*/
+  margin: 0px;
 }
 
 .slideshow-wrapper {

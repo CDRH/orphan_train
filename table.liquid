@@ -30,15 +30,18 @@
   </script>
   <script>
     function correctAge(numString){
+      print("correcting age");
       if numString.includes("mos."){
+        print("mos");
         //We assume it was in months, convert to equivalent years
         //parseFloat gets rid of the mos. part
-        let actualAge = parseFloat(stringArray[0]) / 12;
+        let actualAge = parseFloat(numString) / 12;
         //turn to string and trim to 2 decimals
         let display = actualAge.toFixed(2);
         return display;
 
       } else {
+        print("normal");
         return numString
       }
     }
@@ -49,8 +52,8 @@
   <head>
     <meta charset="utf-8">
     <title>Orphan Train Passengers</title>
-
   </head>
+
   <body>
   {% capture baseRoot %}{% relativeUrl "/" %}{% endcapture %}
     {% render 'header', urlRoot:baseRoot %}
@@ -101,7 +104,13 @@
                 </a>
               </td>
               <td>{{ record["Birth Name Alt"] }}</td>
-              {% comment  %} The following is still WIP: data-order="{{correctAge(record["Age on Arrival in Years"])}}" {% endcomment %}
+              {% comment  %} The following is still WIP: data-order="{{correctAge(record["Age on Arrival in Years"])}}" 
+              {% capture actualAge %}
+                {% correctAge record["Age on Arrival in Years"] %}
+              {% endcapture %}
+
+              data-order={{actualAge}}
+              {% endcomment %}
               <td >{{ record["Age on Arrival in Years"] }}</td>
               <td>{{ record["Sending Organization"] }}</td>
               <td>{{ record["Adopted Name First"] }} {{ record["Adopted Name Middle"] }} {{ record["Adopted Name Last"] }}</td>
@@ -128,4 +137,5 @@
     </div>
     {% render 'footer', urlRoot:baseRoot %}
   </body>
+
 </html>

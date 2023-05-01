@@ -12,7 +12,7 @@ use the following commands for running the site setup:
 
 To run with updated data, replace the Orphan_Train_Data.csv file with the updated data (using the same name of Orphan_Train_Data.csv) and rerun one of the commands above.
 
-The following were steps taken to clean data already:
+The following were steps taken to clean data in addition:
 
 1. Removed space from the end of column header "Adopted Name Last "
 
@@ -29,4 +29,7 @@ When making a new `.liquid` page, the header and footer can be added by using `{
 `{% capture baseRoot %}{% relativeUrl "/" %}{% endcapture %}`
 
 This makes a variable baseRoot that contains the relative path for the given page. 
+
+
+The header and footer have to be added in this way because they exist in a different file than where each of the pages are. This is to ensure uniform appearances across the site
 

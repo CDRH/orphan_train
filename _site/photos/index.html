@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" href=..\css\photos.css>
   <head>
+    <link rel="stylesheet" href=..\css\slideshow.css>
     <meta charset="utf-8">
     <title>Orphan Train Passengers</title>
 
@@ -30,12 +30,12 @@
       <a href=
       ../photos/index.html>Photos</a>
       <a href=
-      ../charts/index.html>Analysis</a>
+      ../analysis/index.html>Analysis</a>
     </nav>
   </div>
 
 </html>
-    
+
       <div class="slideshow-wrapper">
       <div class="slide">
         <div class="counter">1/6</div>
@@ -109,8 +109,8 @@
 
 
       
-      <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-      <button class="next" onclick="plusSlides(1)">&#10095;</button>
+      <button class="prev" onclick="moveSlides(-1)">&#10094;</button>
+      <button class="next" onclick="moveSlides(1)">&#10095;</button>
     </div>
     <!DOCTYPE html>
 <html lang="en">
@@ -134,14 +134,12 @@
       showSlides(slideIndex);
 
 // Next/previous controls
-      function plusSlides(n) {
+      function moveSlides(n) {
         showSlides(slideIndex += n);
       }
 
 // Thumbnail image controls
-      function currentSlide(n) {
-        showSlides(slideIndex = n);
-      }
+
 
       function showSlides(n) {
         let i;

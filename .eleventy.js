@@ -1,5 +1,4 @@
 const papa = require('papaparse');
-//const path = require('path');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addDataExtension("csv", (contents) => {
@@ -23,6 +22,24 @@ module.exports = function (eleventyConfig) {
     } else {
       //URL is already relative/absolute
       return url;
+    }
+
+  });
+
+  eleventyConfig.addShortcode("correctAge", function(numString) {
+    print("correcting age");
+    if (numString.includes("mos.")){
+      print("mos");
+      //We assume it was in months, convert to equivalent years
+      //parseFloat gets rid of the mos. part
+      let actualAge = parseFloat(numString) / 12;
+      //turn to string and trim to 2 decimals
+      let display = actualAge.toFixed(2);
+      return display;
+
+    } else {
+      print("normal");
+      return numString
     }
 
   });
