@@ -104,14 +104,20 @@
                 </a>
               </td>
               <td>{{ record["Birth Name Alt"] }}</td>
-              {% comment  %} The following is still WIP: data-order="{{correctAge(record["Age on Arrival in Years"])}}" 
+
+              {% comment %}
+                following logic is for proper sorting
+              {% endcomment %}
+              {% capture ageString %}
+                {{record["Age on Arrival in Years"]}}
+              {% endcapture %}
               {% capture actualAge %}
-                {% correctAge record["Age on Arrival in Years"] %}
+                {% correctAge ageString %}
               {% endcapture %}
 
-              data-order={{actualAge}}
-              {% endcomment %}
-              <td >{{ record["Age on Arrival in Years"] }}</td>
+              
+              
+              <td data-order={{actualAge}}>{{ record["Age on Arrival in Years"] }}</td>
               <td>{{ record["Sending Organization"] }}</td>
               <td>{{ record["Adopted Name First"] }} {{ record["Adopted Name Middle"] }} {{ record["Adopted Name Last"] }}</td>
               <td>{{ record["Adopted Name Alt"] }}</td>

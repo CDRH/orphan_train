@@ -27,9 +27,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addShortcode("correctAge", function(numString) {
-    print("correcting age");
     if (numString.includes("mos.")){
-      print("mos");
       //We assume it was in months, convert to equivalent years
       //parseFloat gets rid of the mos. part
       let actualAge = parseFloat(numString) / 12;
@@ -38,7 +36,6 @@ module.exports = function (eleventyConfig) {
       return display;
 
     } else {
-      print("normal");
       return numString
     }
 
