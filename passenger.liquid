@@ -14,7 +14,7 @@ permalink: "people/{{ record.AutoID | slug }}/"
     {% comment %}
     Should this be replaced with the person's name? My initial concern with doing this was that I wasn't sure if everyone would have a unique name, so I went with the AutoID
     {% endcomment %}
-    <title>{{ record.AutoID }}</title>
+    <title>{{ record["Birth Name First"] }} {{record["Birth Name Last"]}}</title>
   </head>
   <body>
     {% capture baseRoot %}
