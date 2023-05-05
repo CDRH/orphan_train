@@ -45,7 +45,6 @@ div.header {
   nav {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 3rem);
-
   }
   .title {
     font-size: 4rem;
