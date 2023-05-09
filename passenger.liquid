@@ -8,17 +8,16 @@ permalink: "people/{{ record.AutoID | slug }}/"
 
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" href={% relativeUrl "/css/passenger.css" %}>
-  <head>
+  {% capture baseRoot %}
+  {% relativeUrl "/" %}{% endcapture %}
+<head>
+  <link rel="stylesheet" href={{baseRoot | append: "/css/passenger.css" }}>
+  <link rel="stylesheet" href={{baseRoot | append: "/css/header.css"}}>
+  <link rel="stylesheet" href={{baseRoot | append: "/css/footer.css"}}>
     <meta charset="utf-8">
-    {% comment %}
-    Should this be replaced with the person's name? My initial concern with doing this was that I wasn't sure if everyone would have a unique name, so I went with the AutoID
-    {% endcomment %}
     <title>{{ record["Birth Name First"] }} {{record["Birth Name Last"]}}</title>
   </head>
   <body>
-    {% capture baseRoot %}
-      {% relativeUrl "/" %}{% endcapture %}
 
     {% render 'header', urlRoot: baseRoot %}
     <div class="paper">
@@ -153,7 +152,7 @@ permalink: "people/{{ record.AutoID | slug }}/"
 
       </ol>
     </div>
-    <a href={% relativeUrl "/table/index.html" %} class="clickHere">
+    <a href={{baseRoot | append: "/table/index.html" }} class="clickHere">
       Return to Passengers</a>
     {% render 'footer', urlRoot: baseRoot %}
   </body>

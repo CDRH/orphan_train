@@ -21,15 +21,8 @@ Explanation: Data correction
 
 # Writing Root-Relative links
 By default, the links eleventy generates will be root relative. This works fine when running the live website (with `npm run start`), but for a static site it doesn't work. 
-The solution is to wrap the following around the link: `{% relativeUrl **"/your-root-relative-link-here/"** %}`. This uses a shortcode found in the .eleventy.js file to turn the root-relative link to a relative link.
+The solution is to calculate the location by using `{% capture baseRoot %}{% relativeUrl "/" %}{% endcapture %}` at the beginning of the page. This makes a variable **baseRoot** that contains the relative path for the given page by using a shortcode found in the .eleventy.js file. This can then be used for your links by writing `{{baseRoot | append: "your-relative-link-here"}}`.
 
 # Adding a new page
-When making a new `.liquid` page, the header and footer can be added by using `{%render 'header' urlRoot: baseRoot %}`. The baseRoot is to turn the header/footer's links into a working relative link, similar to what was mentioned above. The baseRoot can be calculated by adding the following line on your page:
-
-`{% capture baseRoot %}{% relativeUrl "/" %}{% endcapture %}`
-
-This makes a variable baseRoot that contains the relative path for the given page. 
-
-
-The header and footer have to be added in this way because they exist in a different file than where each of the pages are. This is to ensure uniform appearances across the site
+When making a new `.liquid` page, the header and footer can be added by using `{%render 'header' urlRoot: baseRoot %}`. The baseRoot is what is calculated above and is passed in to the header and footer to allow them to path correctly. The header and footer have to be added in this way because they exist in a different directory compared to the pages. This is to ensure uniform appearances across the site.
 

@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" href={% relativeUrl "/css/home.css" %}>
-  <head>
+  {% assign baseRoot = "." %}
+<head>
+  <link rel="stylesheet" href={{baseRoot | append: "/css/home.css" }}>
+  <link rel="stylesheet" href={{baseRoot | append: "/css/header.css"}}>
+  <link rel="stylesheet" href={{baseRoot | append: "/css/footer.css"}}>
     <meta charset="utf-8">
     <title>Orphan Train Passengers</title>
 
@@ -12,14 +15,14 @@
 
     The index page's urlRoot for the header and footer is slightly different because it is already at the root of the site. There are no calculations that need to be made. 
     {% endcomment %}
-    {% assign baseRoot = "." %}
+
 
     {% render 'header', urlRoot: baseRoot %}
     <img
-      src={% relativeUrl "/images/1388-resized.webp" %}
+      src={{baseRoot | append: "/images/1388-resized.webp" }}
       alt="Photo of train"
       class="train" />
-    <a href={% relativeUrl "/table/index.html" %} class="clickHere">
+    <a href={{baseRoot | append: "/table/index.html" }} class="clickHere">
       Click here to see the list of passengers</a>
     {% render 'footer', urlRoot: baseRoot %}
   </body>

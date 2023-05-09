@@ -44,6 +44,8 @@ module.exports = function (eleventyConfig) {
   //used so we can have css files and assets that are copied to the ending website
   eleventyConfig.addPassthroughCopy('css')
   eleventyConfig.addPassthroughCopy('images')
+  eleventyConfig.addPassthroughCopy('scripts')
+
 
   /*
   The following adds a copy of the CSV so future people can work with the data. 
