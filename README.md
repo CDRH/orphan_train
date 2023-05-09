@@ -12,13 +12,6 @@ use the following commands for running the site setup:
 
 To run with updated data, replace the Orphan_Train_Data.csv file with the updated data (using the same name of Orphan_Train_Data.csv) and rerun one of the commands above.
 
-The following were steps taken to clean data in addition:
-
-1. Removed space from the end of column header "Adopted Name Last "
-
-Explanation: Data correction
-
-
 # Writing Root-Relative links
 By default, the links eleventy generates will be root relative. This works fine when running the live website (with `npm run start`), but for a static site it doesn't work. 
 The solution is to calculate the location by using `{% capture baseRoot %}{% relativeUrl "/" %}{% endcapture %}` at the beginning of the page. This makes a variable **baseRoot** that contains the relative path for the given page by using a shortcode found in the .eleventy.js file. This can then be used for your links by writing `{{baseRoot | append: "your-relative-link-here"}}`.
