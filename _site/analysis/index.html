@@ -3,13 +3,45 @@
   
   <head>
     <link rel="stylesheet" href=
-    ../css/slideshow.css>
+    ../css/slideshow.css />
     <link rel="stylesheet" href=
-    ../css/header.css>
+    ../css/header.css />
     <link rel="stylesheet" href=
-    ../css/footer.css>
-    <meta charset="utf-8">
+    ../css/footer.css />
+    <meta charset="utf-8" />
     <title>Orphan Train Passengers</title>
+    <script>
+      // Used for the slideshow features
+      let slideIndex = 1;
+
+// Next/previous controls
+      function moveSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+// Thumbnail image controls
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        if (n > slides.length) {
+          slideIndex = 1
+        }
+        if (n < 1) {
+          slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+      }
+
+// load the picture at the beginning of the site
+
+      window.onload = function() {
+        showSlides(slideIndex);
+      };
+    </script>
   </head>
   <body>
 
@@ -39,18 +71,21 @@
       <button class="next" onclick="moveSlides(1)">&#10095;</button>
       <div class="slide">
         <div class="counter">1/3</div>
-        <img src=..\images\Children_Age_Gender-resized.webp alt="Age and Gender Percentages of Children in Nebraska" />
+        <img src=
+    ../images/Children_Age_Gender-resized.webp alt="Age and Gender Percentages of Children in Nebraska" />
       </div>
 
       <div class="slide">
         <div class="counter">2/3</div>
-        <img src=..\images\Age_Breakdown-resized.webp alt="Age Percentages of Children in Nebraska" />
+        <img src=
+    ../images/Age_Breakdown-resized.webp alt="Age Percentages of Children in Nebraska" />
       
       </div>
 
       <div class="slide">
         <div class="counter">3/3</div>
-        <img src=..\images\Gender_Breakdown-resized.webp alt="Gender Percentages of Children in Nebraska" />
+        <img src=
+    ../images/Gender_Breakdown-resized.webp alt="Gender Percentages of Children in Nebraska" />
       
       </div>
 
@@ -73,33 +108,6 @@
 </div>
 
 
-    <script>
-      // Used for the slideshow features
-      let slideIndex = 1;
-      showSlides(slideIndex);
-
-// Next/previous controls
-      function moveSlides(n) {
-        showSlides(slideIndex += n);
-      }
-
-// Thumbnail image controls
-
-      function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("slide");
-        if (n > slides.length) {
-          slideIndex = 1
-        }
-        if (n < 1) {
-          slideIndex = slides.length
-        }
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slides[slideIndex - 1].style.display = "block";
-      }
-    </script>
 
   </body>
 </html>

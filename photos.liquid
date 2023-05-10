@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
   {% capture baseRoot %}
-  {% relativeUrl "/" %}{% endcapture %}
-<head>
-  <link rel="stylesheet" href={{baseRoot | append: "/css/slideshow.css" }}>
-  <link rel="stylesheet" href={{baseRoot | append: "/css/header.css"}}>
-  <link rel="stylesheet" href={{baseRoot | append: "/css/footer.css"}}>
-  {% comment  %}  
-  <script src={{baseRoot | append: "/scripts/slideControls.js" }}></script>
-  {% endcomment %}
+    {% relativeUrl "/" %}{% endcapture %}
+  <head>
+    <link rel="stylesheet" href={{baseRoot | append: "/css/slideshow.css" }}>
+    <link rel="stylesheet" href={{baseRoot | append: "/css/header.css"}}>
+    <link rel="stylesheet" href={{baseRoot | append: "/css/footer.css"}}>
+    {% comment %}  
+    <script src={{baseRoot | append: "/scripts/slideControls.js" }}></script>
+    {% endcomment %}
     <meta charset="utf-8">
     <title>Orphan Train Passengers</title>
+
+    <script>
+      // Used for the slideshow features
+      let slideIndex = 1;
+
+// Next/previous controls
+      function moveSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+// Thumbnail image controls
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        if (n > slides.length) {
+          slideIndex = 1
+        }
+        if (n < 1) {
+          slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+      }
+
+// load the picture at the beginning of the site
+      window.onload = function() {
+        showSlides(slideIndex);
+      }
+    </script>
 
   </head>
   <body>
@@ -20,7 +52,7 @@
     {% endcomment %}
     {% render 'header', urlRoot: baseRoot %}
 
-      <div class="slideshow-wrapper">
+    <div class="slideshow-wrapper">
       <div class="slide">
         <div class="counter">1/6</div>
         <img src={{ baseRoot | append: "/images/17954-resized.webp" }} alt="Photo of Panzer Brothers" />
@@ -95,33 +127,6 @@
     </div>
     {% render 'footer', urlRoot: baseRoot %}
 
-    <script>
-      // Used for the slideshow features
-let slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function moveSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("slide");
-    if (n > slides.length) {
-        slideIndex = 1
-    }
-    if (n < 1) {
-        slideIndex = slides.length
-    }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slides[slideIndex - 1].style.display = "block";
-}
-    </script>
 
 
   </body>
