@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+{% capture baseRoot %}{% relativeUrl "/" %}{% endcapture %}
+  <head>
   {% comment %}
   This is used to set up DataTables
-  {% endcomment %}<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  {% endcomment %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
   <link
     rel="stylesheet"
     type="text/css"
     href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
-  <link rel="stylesheet" href= {% relativeUrl "/css/table.css" %}>
   <script>
     $(document).ready(function() {
       $('#table').DataTable({
@@ -28,34 +30,20 @@
       });
     });
   </script>
-  <script>
-    function correctAge(numString){
-      print("correcting age");
-      if numString.includes("mos."){
-        print("mos");
-        //We assume it was in months, convert to equivalent years
-        //parseFloat gets rid of the mos. part
-        let actualAge = parseFloat(numString) / 12;
-        //turn to string and trim to 2 decimals
-        let display = actualAge.toFixed(2);
-        return display;
 
-      } else {
-        print("normal");
-        return numString
-      }
-    }
-  </script>
+ 
   {% comment %}
    DataTables setup done
   {% endcomment %}
-  <head>
+  <link rel="stylesheet" href= {{ baseRoot | append: "/css/table.css" }}>
+  <link rel="stylesheet" href={{baseRoot | append: "/css/header.css"}}>
+  <link rel="stylesheet" href={{baseRoot | append: "/css/footer.css"}}>
     <meta charset="utf-8">
     <title>Orphan Train Passengers</title>
   </head>
 
   <body>
-  {% capture baseRoot %}{% relativeUrl "/" %}{% endcapture %}
+  
     {% render 'header', urlRoot:baseRoot %}
       <div class="pageBody">
       <h1>Passengers on the Orphan Train</h1>
@@ -138,7 +126,7 @@
       </table>
       <a
         download
-        href= {% relativeUrl "/_data/Orphan_Train_Data.csv" %}
+        href= {{ baseRoot | append: "/_data/Orphan_Train_Data.csv" }}
         class="downloadButton">Download CSV</a>
     </div>
     {% render 'footer', urlRoot:baseRoot %}

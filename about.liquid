@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  {% capture baseRoot %}
+  {% relativeUrl "/" %}{% endcapture %}
   <head>
 
-    <link rel="stylesheet" href={% relativeUrl "/css/writing.css" %}>
+    <link rel="stylesheet" href={{baseRoot | append: "/css/writing.css" }}>
+    <link rel="stylesheet" href={{baseRoot | append: "/css/header.css"}}>
+    <link rel="stylesheet" href={{baseRoot | append: "/css/footer.css"}}>
     <meta charset="utf-8">
     <title>Orphan Train Passengers</title>
-
   </head>
 
   <body>
     {% comment %}
     This provides the information and acknowledgements for this project.
     {% endcomment %}
-    {% capture baseRoot %}
-      {% relativeUrl "/" %}{% endcapture %}
+    
     {% render 'header', urlRoot: baseRoot %}
 
     <h1>ABOUT THE PROJECT</h1>

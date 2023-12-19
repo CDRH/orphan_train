@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-
-    <link rel="stylesheet" href={% relativeUrl "/css/writing.css" %}>
+  {% capture baseRoot %}
+  {% relativeUrl "/" %}{% endcapture %}
+<head>
+  <link rel="stylesheet" href={{baseRoot | append: "/css/writing.css" }}>
+  <link rel="stylesheet" href={{baseRoot | append: "/css/header.css"}}>
+  <link rel="stylesheet" href={{baseRoot | append: "/css/footer.css"}}>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
       $(document).ready(function() {
@@ -24,9 +26,6 @@
     {% comment %}
     This provides the background information about the trains
     {% endcomment %}
-    {% capture baseRoot %}
-      {% relativeUrl "/" %}{% endcapture %}
-
     {% render 'header', urlRoot: baseRoot %}
 
     <h1>A SHORT HISTORY OF THE ORPHAN TRAINS</h1>

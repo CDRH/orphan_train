@@ -26,8 +26,8 @@ module.exports = function (eleventyConfig) {
 
   });
 
-  eleventyConfig.addShortcode("correctAge", function(numString) {
-    if (numString.includes("mos.")){
+  eleventyConfig.addShortcode("correctAge", function (numString) {
+    if (numString.includes("mos.")) {
       //We assume it was in months, convert to equivalent years
       //parseFloat gets rid of the mos. part
       let actualAge = parseFloat(numString) / 12;
@@ -44,6 +44,7 @@ module.exports = function (eleventyConfig) {
   //used so we can have css files and assets that are copied to the ending website
   eleventyConfig.addPassthroughCopy('css')
   eleventyConfig.addPassthroughCopy('images')
+
 
   /*
   The following adds a copy of the CSV so future people can work with the data. 
